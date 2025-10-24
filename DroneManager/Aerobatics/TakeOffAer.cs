@@ -1,9 +1,9 @@
 ﻿namespace DroneManager.Aerobatics;
 
-public class TakeOffAer(Drone drone, double maxZ) : BaseAerobatics
+public class TakeOffAer(Drone drone) : BaseAerobatics
 {
-	public override void Execute()
+	public override void Execute(DoublePosition position)
 	{
-		drone.GoTo("Взлет", drone.CurrentPosition.X, drone.CurrentPosition.Y, maxZ);
+		drone.GoTo("Взлет", drone.CurrentPosition.X, drone.CurrentPosition.Y, position.Z);
 	}
 }
